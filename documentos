@@ -1,1 +1,77 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Modelo Conceitual" id="conceitual">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- ENTIDADES -->
+        <mxCell id="cliente" value="CLIENTE" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1">
+          <mxGeometry x="100" y="200" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="telefone" value="TELEFONE" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1">
+          <mxGeometry x="100" y="50" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="vendedor" value="VENDEDOR" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1">
+          <mxGeometry x="400" y="200" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="pedido" value="PEDIDO" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1">
+          <mxGeometry x="250" y="350" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="produto" value="PRODUTO" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1">
+          <mxGeometry x="550" y="350" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="detalhe_pedido" value="DETALHE_PEDIDO" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1">
+          <mxGeometry x="400" y="500" width="150" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="entrega" value="ENTREGA" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1">
+          <mxGeometry x="100" y="500" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="repartidor" value="REPARTIDOR" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=14;fontStyle=1;" vertex="1">
+          <mxGeometry x="100" y="650" width="120" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- RELACIONAMENTOS -->
+        <mxCell id="rel_cliente_telefone" value="TEM" style="shape=rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1">
+          <mxGeometry x="130" y="130" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_cliente_pedido" value="REALIZA" style="shape=rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1">
+          <mxGeometry x="180" y="280" width="80" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_vendedor_pedido" value="ATENDE" style="shape=rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1">
+          <mxGeometry x="380" y="280" width="80" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_pedido_detalhe" value="CONTÉM" style="shape=rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1">
+          <mxGeometry x="340" y="430" width="80" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_produto_detalhe" value="INCLUI" style="shape=rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1">
+          <mxGeometry x="520" y="430" width="80" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_pedido_entrega" value="TEM" style="shape=rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1">
+          <mxGeometry x="180" y="430" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rel_entrega_repartidor" value="REALIZA" style="shape=rhombus;whiteSpace=wrap;html=1;strokeColor=#000000;fillColor=#ffffff;" vertex="1">
+          <mxGeometry x="130" y="570" width="60" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- CONEXÕES -->
+        <mxCell edge="1" source="cliente" target="rel_cliente_telefone" id="e1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="telefone" target="rel_cliente_telefone" id="e2"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="cliente" target="rel_cliente_pedido" id="e3"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="rel_cliente_pedido" target="pedido" id="e4"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="vendedor" target="rel_vendedor_pedido" id="e5"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="rel_vendedor_pedido" target="pedido" id="e6"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="pedido" target="rel_pedido_detalhe" id="e7"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="rel_pedido_detalhe" target="detalhe_pedido" id="e8"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="produto" target="rel_produto_detalhe" id="e9"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="rel_produto_detalhe" target="detalhe_pedido" id="e10"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="pedido" target="rel_pedido_entrega" id="e11"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="rel_pedido_entrega" target="entrega" id="e12"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="entrega" target="rel_entrega_repartidor" id="e13"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell edge="1" source="rel_entrega_repartidor" target="repartidor" id="e14"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
 
