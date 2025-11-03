@@ -75,3 +75,63 @@
   </diagram>
 </mxfile>
 
+<mxfile host="app.diagrams.net">
+  <diagram name="Modelo Lógico" id="logico">
+    <mxGraphModel dx="1600" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1920" pageHeight="1080">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- CLIENTE -->
+        <mxCell id="CLIENTE" value="CLIENTE&#10;- id_cliente (PK) NUMBER(5)&#10;- nome VARCHAR2(50)&#10;- email VARCHAR2(100)&#10;- endereco VARCHAR2(50)&#10;- data_registro DATE" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=13;fontStyle=1;" vertex="1">
+          <mxGeometry x="80" y="100" width="200" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- TELEFONE -->
+        <mxCell id="TELEFONE" value="TELEFONE&#10;- id_tel (PK) NUMBER(20)&#10;- ddd VARCHAR2(5)&#10;- tipo VARCHAR2(20)" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=13;" vertex="1">
+          <mxGeometry x="80" y="300" width="200" height="100" as="geometry"/>
+        </mxCell>
+
+        <!-- VENDEDOR -->
+        <mxCell id="VENDEDOR" value="VENDEDOR&#10;- id_vend (PK) NUMBER(10)&#10;- nome VARCHAR2(50)&#10;- data_contrat DATE&#10;- email VARCHAR2(100)&#10;- fone VARCHAR2(20)&#10;- endereco VARCHAR2(50)" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=13;" vertex="1">
+          <mxGeometry x="420" y="100" width="230" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- PRODUTO -->
+        <mxCell id="PRODUTO" value="PRODUTO&#10;- id_produto (PK) NUMBER(5)&#10;- nome_produto VARCHAR2(50)&#10;- descricao VARCHAR2(50)&#10;- tamanho VARCHAR2(50)&#10;- categoria VARCHAR2(50)&#10;- cor VARCHAR2(20)&#10;- preco NUMBER(7,2)&#10;- estoque_disponivel VARCHAR2(50)&#10;- data_ingresso DATE" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=13;" vertex="1">
+          <mxGeometry x="820" y="100" width="260" height="180" as="geometry"/>
+        </mxCell>
+
+        <!-- PEDIDO -->
+        <mxCell id="PEDIDO" value="PEDIDO&#10;- id_pedido (PK) NUMBER(5)&#10;- id_cliente (FK) NUMBER(5)&#10;- id_vend (FK) NUMBER(5)&#10;- data_pedido DATE&#10;- endereco VARCHAR2(50)" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=13;" vertex="1">
+          <mxGeometry x="420" y="320" width="230" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- DETALHE_PEDIDO -->
+        <mxCell id="DETALHE_PEDIDO" value="DETALHE_PEDIDO&#10;- id_detalhe (PK) NUMBER(5)&#10;- id_pedido (FK) NUMBER(5)&#10;- id_produto (FK) NUMBER(5)&#10;- quantidade NUMBER(5)&#10;- preco_uni NUMBER(7,2)&#10;- subtotal NUMBER(7,2)" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=13;" vertex="1">
+          <mxGeometry x="820" y="340" width="250" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- ENTREGA -->
+        <mxCell id="ENTREGA" value="ENTREGA&#10;- id_entrega (PK) NUMBER(5)&#10;- id_pedido (FK) NUMBER(5)&#10;- data_entrega DATE&#10;- end_entrega VARCHAR2(50)&#10;- estado_entrega VARCHAR2(50)&#10;- comp_entrega VARCHAR2(20)" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=13;" vertex="1">
+          <mxGeometry x="420" y="500" width="250" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- REPARTIDOR -->
+        <mxCell id="REPARTIDOR" value="REPARTIDOR&#10;- id_repartidor (PK) NUMBER(5)&#10;- nome VARCHAR2(50)&#10;- sobrenome VARCHAR2(50)&#10;- veiculo VARCHAR2(20)&#10;- placa VARCHAR2(20)" style="shape=rectangle;whiteSpace=wrap;html=1;rounded=0;strokeColor=#000000;fillColor=#ffffff;fontSize=13;" vertex="1">
+          <mxGeometry x="80" y="520" width="220" height="120" as="geometry"/>
+        </mxCell>
+
+        <!-- RELACIONAMENTOS -->
+        <mxCell id="e1" edge="1" source="CLIENTE" target="PEDIDO" style="endArrow=block;endFill=1;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" edge="1" source="VENDEDOR" target="PEDIDO" style="endArrow=block;endFill=1;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" edge="1" source="PEDIDO" target="DETALHE_PEDIDO" style="endArrow=block;endFill=1;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" edge="1" source="PRODUTO" target="DETALHE_PEDIDO" style="endArrow=block;endFill=1;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" edge="1" source="PEDIDO" target="ENTREGA" style="endArrow=block;endFill=1;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" edge="1" source="ENTREGA" target="REPARTIDOR" style="endArrow=block;endFill=1;strokeColor=#000000;"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
+
