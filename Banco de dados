@@ -1,0 +1,74 @@
+P.I
+
+create table CLIENTE(
+id_cliente number(5) primary key,
+nome varchar2(50),
+email varchar2(100),
+endereco varchar2(50),
+data_registro date
+);
+
+create table TELEFONE(
+id_tel number(20)primary key,
+ddd varchar2(5),
+tipo varchar2(20)
+);
+
+create table VENDEDOR(
+id_vend number(10)primary key,
+nome varchar2(50),
+data_contrat date,
+email varchar2(100),
+fone varchar2(20),
+endereco varchar2(50)
+);
+
+create table PRODUTO(
+    id_produto NUMBER (5)primary key,
+    nome_produto varchar2(50),
+    descricao varchar2(50),
+    tamanho varchar2(50),
+    categoria varchar2(50),
+    cor varchar2(20),
+    preco number(7,2),
+    estoque_disponivel varchar2(50),
+    data_ingresso date);
+
+create table PEDIDO( 
+    id_pedido number(5) primary key, 
+    id_cliente number(5), 
+    id_vend number(5), 
+    data_pedido date, 
+    endereco varchar2(50), 
+    CONSTRAINT FK_PEDIDO_CLIENTE FOREIGN KEY (id_cliente) REFERENCES CLIENTE(id_cliente), 
+    CONSTRAINT FK_PEDIDO_VENDEDOR FOREIGN KEY (id_vend) REFERENCES VENDEDOR(id_vend));
+
+
+
+
+create table DETALHE_PEDIDO(
+    id_detalhe number(5)primary key,
+    id_pedido number(5),
+    id_produto number(5),
+    quantidade number(5),
+    preco_uni number(7,2),
+    subtotal number(7,2),
+    CONSTRAINT FK_DETALHE_PEDIDO_PED FOREIGN KEY (id_pedido) REFERENCES PEDIDO(id_pedido),
+    CONSTRAINT FK_DETALHE_PEDIDO_PROD FOREIGN KEY (id_produto) REFERENCES PRODUTO(id_produto));
+
+create table ENTREGA(
+    id_entrega number(5)primary key,
+    id_pedido number(5),
+    data_entrega date,
+    end_entrega varchar2(50),
+    estado_entrega varchar2(50),
+    comp_entrega varchar2(20),
+   CONSTRAINT FK_DETALHE_ENTREGA_PEDIDO FOREIGN KEY (id_pedido) REFERENCES PEDIDO(id_pedido));
+
+
+create table REPARTIDOR(
+    id_repartidor number(5)primary key,
+    nome varchar2(50),
+    sobrenome varchar2(50),
+    veiculo varchar2(20),
+    placa varchar2(20));
