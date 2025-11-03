@@ -13,7 +13,6 @@ Este projeto tem como objetivo desenvolver um **sistema web de gerenciamento com
 - Mariel Alejandra de Jesus Casique Reyes
 - Pedro Henrique Alencar Gonçalves Monteiro  
 - Rita Gabrieli Rodrigues da Cunha  
-- 
 - **Orientador:** Prof. Me. José Picovsky  
 
 ---
