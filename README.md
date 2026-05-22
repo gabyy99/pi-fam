@@ -1,40 +1,221 @@
-# 🛍️ Sistema Administrativo: Controle de Estoque, Insumos e Análise de Lucro
+# 👗 Grace Store - Sistema Administrativo de Controle de Estoque, Insumos e Análise de Lucro
 
-Este projeto tem como objetivo desenvolver um **sistema web de gerenciamento comercial** para **lojas de vestuário**, reunindo em uma única plataforma funções essenciais como **controle de produtos, vendas, entregas e usuários**.
+<p align="center">
+  <img src="https://img.shields.io/badge/status-em%20desenvolvimento-yellow" />
+  <img src="https://img.shields.io/badge/React-Frontend-blue" />
+  <img src="https://img.shields.io/badge/TypeScript-Language-blue" />
+  <img src="https://img.shields.io/badge/Oracle-Database-red" />
+  <img src="https://img.shields.io/badge/license-Acadêmico-green" />
+</p>
+
+## 📌 Sobre o Projeto
+
+O **Grace Store** é um sistema administrativo desenvolvido para auxiliar uma loja de vestuário de pequeno porte no gerenciamento de suas operações diárias. O projeto foi criado com o objetivo de substituir o controle manual utilizado pela empresa, centralizando processos importantes em uma única plataforma.
+
+A solução contempla funcionalidades voltadas para:
+
+✅ Controle de estoque de produtos  
+✅ Gestão de insumos operacionais  
+✅ Registro de vendas  
+✅ Controle de usuários por nível de acesso  
+✅ Relatórios financeiros  
+✅ Análise de lucro bruto e líquido  
+
+O sistema é voltado para uso interno da loja, permitindo maior organização, confiabilidade das informações e apoio na tomada de decisões.
 
 ---
 
-## 👥 Integrantes do Grupo
+## 🎯 Objetivo do Projeto
 
-- Ayssa Gabriely Andrade da Silva  
-- Enrico Azevedo de Carvalho  
-- José Rafael Alejandro Casique Reyes
-- Miguel Miada dos Santos
-- Pedro Henrique Alencar Gonçalves Monteiro  
-- Rita Gabrieli Rodrigues da Cunha  
-- **Orientador:** Prof. Me. José Picovsky  
+Desenvolver um sistema web funcional para a **Grace Store**, capaz de automatizar o gerenciamento de estoque, vendas, insumos e indicadores financeiros, oferecendo suporte administrativo eficiente e reduzindo falhas causadas por processos manuais.
 
 ---
 
-## 🧠 Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
-- **Frontend:** React + TypeScript  
-- **Prototipagem:** Figma  
-- **Banco de Dados:** MySQL  
-- **Ferramentas:** Node.js, HTML5, CSS3  
-- **Versionamento:** Git e GitHub  
+### Front-end
+- React
+- TypeScript
+- HTML5
+- CSS3
+
+### Banco de Dados
+- Oracle Database
+- SQL (DDL / DML)
+
+### Modelagem e Prototipação
+- UML (Unified Modeling Language)
+- Figma
+- Draw.io
+
+### Versionamento
+- Git
+- GitHub
 
 ---
 
-## 📐 Modelagem do Banco de Dados
-O banco de dados foi desenvolvido para garantir a integridade e o relacionamento entre as informações do sistema.  
-A modelagem foi dividida em duas etapas: o *Diagrama Entidade-Relacionamento (DER)* e o *Modelo Lógico*.
+## 🏗️ Arquitetura do Projeto
 
-### Modelo Conceitual(DER) ![modelo conceitual](https://github.com/user-attachments/assets/8a28fd72-1023-4ff3-98bf-70ee05f22b30)
+O sistema foi estruturado com diferentes módulos administrativos, permitindo o gerenciamento completo da operação da loja.
 
+### 👤 Administrador
+Possui acesso total ao sistema:
 
-### Modelo Lógico![modelo lógico](https://github.com/user-attachments/assets/0df5622f-d267-4f28-8314-8ade71dc3c2d)
-## 💾 Script SQL — Criação das Tabelas
+- Gerenciar Produtos (CRUD)
+- Gerenciar Insumos
+- Gerenciar Usuários
+- Registrar Custos Operacionais
+- Visualizar Análise de Lucro
+- Gerar Relatórios Financeiros
+- Consultar Estoque
+- Registrar Vendas
+
+### 👨‍💼 Funcionário
+Possui acesso restrito:
+
+- Efetuar Login
+- Registrar Vendas
+- Consultar Estoque
+
+---
+
+# 📊 Modelagem do Banco de Dados
+
+O banco de dados foi modelado utilizando o paradigma relacional, garantindo integridade das informações através de chaves primárias, estrangeiras e regras de validação.
+
+## Diagrama Entidade Relacionamento (DER)
+
+<p align="center">
+  <img src="./assets/der.jpeg" width="900">
+</p>
+
+O DER foi elaborado para representar as principais entidades do sistema, incluindo:
+
+- Usuário
+- Produto
+- Insumo
+- Fornecedor
+- Venda
+- Item de Venda
+- Custo Operacional
+
+Além disso, os relacionamentos permitem o controle do estoque e o cálculo de lucro com base nos custos operacionais e preço de venda dos produtos.
+
+---
+
+## Estrutura SQL - Tabela Produto
+
+<p align="center">
+  <img src="./assets/criacao-tabela-produto.jpeg" width="900">
+</p>
+
+A tabela **PRODUTO** foi implementada no **Oracle Database** utilizando restrições de integridade, garantindo:
+
+- Validação de preço de venda
+- Controle de custo de compra
+- Controle de status do produto
+- Integridade referencial com fornecedores
+
+---
+
+## 📌 Diagrama de Casos de Uso
+
+<p align="center">
+  <img src="./assets/casos-de-uso.jpeg" width="900">
+</p>
+
+O diagrama demonstra as permissões de acesso dos diferentes perfis do sistema:
+
+### Administrador
+Acesso completo às funcionalidades administrativas e financeiras.
+
+### Funcionário
+Acesso limitado ao registro de vendas e consulta de estoque.
+
+---
+
+## 📄 Artigo Científico
+
+Este projeto também possui um artigo acadêmico contendo toda a fundamentação teórica, modelagem do banco de dados, metodologia e objetivos do sistema.
+
+📥 **Baixe o artigo aqui:**  
+
+[📄 Artigo Grace Store](./docs/Artigo-Grace-Store.pdf)
+
+---
+
+## 📂 Estrutura do Projeto
+
+```bash
+grace-store/
+│── src/
+│── public/
+│── assets/
+│   ├── der.jpeg
+│   ├── criacao-tabela-produto.jpeg
+│   └── casos-de-uso.jpeg
+│
+│── docs/
+│   └── Artigo-Grace-Store.pdf
+│
+│── README.md
+```
+
+---
+
+## ⚙️ Funcionalidades do Sistema
+
+| Funcionalidade | Administrador | Funcionário |
+|----------------|---------------|--------------|
+| Login | ✅ | ✅ |
+| Cadastro de Produtos | ✅ | ❌ |
+| Gestão de Insumos | ✅ | ❌ |
+| Gestão de Usuários | ✅ | ❌ |
+| Registro de Venda | ✅ | ✅ |
+| Consulta de Estoque | ✅ | ✅ |
+| Relatórios Financeiros | ✅ | ❌ |
+| Análise de Lucro | ✅ | ❌ |
+| Custos Operacionais | ✅ | ❌ |
+
+---
+
+## 📈 Próximas Implementações
+
+- [ ] Integração do front-end com banco de dados
+- [ ] Dashboard financeiro
+- [ ] Relatórios automatizados
+- [ ] Controle avançado de estoque
+- [ ] Sistema de autenticação por perfil
+- [ ] Responsividade para dispositivos móveis
+
+---
+
+## 👨‍💻 Equipe do Projeto
+
+- **Ayssa Gabriely Andrade da Silva**
+- **Enrico Azevedo de Carvalho**
+- **José Rafael Alejandro Casique Reyes**
+- **Miguel Miada dos Santos**
+- **Pedro Henrique Alencar Gonçalves Monteiro**
+- **Rita Gabrieli Rodrigues da Cunha**
+
+**Orientador:**  
+**Prof. Me. José Picovsky**
+
+---
+
+## 📚 Referências
+
+- Laudon, K. C.; Laudon, J. P. *Sistemas de Informação Gerenciais*.
+- Booch, G.; Rumbaugh, J.; Jacobson, I. *UML: Guia do Usuário*.
+- Silberschatz, A.; Korth, H. F.; Sudarshan, S. *Sistema de Banco de Dados*.
+- Elmasri, R.; Navathe, S. *Sistemas de Banco de Dados*.
+
+---
+
+<p align="center">
+Desenvolvido para o Projeto Integrador — Grace Store 💙
+</p>
 
 ```sql
 -- CRIAÇÃO DAS TABELAS DO BANCO DE DADOS
@@ -233,45 +414,5 @@ CREATE TABLE ENTREGA (
 
 ---
 
-## 💻 Telas do Sistema
-
-### Telas <img width="4880" height="1870" alt="figma-pi 2 0 (2)" src="https://github.com/user-attachments/assets/5a7ddfa2-d7b3-4b35-b94d-b26ad2885df2" />
-
-
----
-
-## ⚙️ Funcionalidades
-
-- Cadastro e controle de produtos  
-- Registro de vendas  
-- Gestão de entregas e clientes  
-- Controle de estoque em tempo real  
-- Relatórios gerenciais  
-- Controle de acesso por usuários  
-
----
-
-## 🧩 Estrutura do Projeto
-📦 pi-fam
-├── database/         → Modelagem e scripts SQL
-├── frontend/         → Prototipagem e imagens das telas
-├── docs/             → Artigo e documentação
-├── assets/           → Logos e imagens gerais
-└── README.md         → Descrição do projeto
-
-## 📚 Documentação
-
-- [📄 Artigo do Projeto](docs/DOC-Artigo fam.pdf)
-
----
-
-## 🚀 Objetivo
-
-A solução busca *agilizar o processo de gestão comercial, promovendo **organização, eficiência e segurança* nas operações diárias das lojas.  
-O sistema é totalmente responsivo e pode ser acessado por diferentes dispositivos.
-
----
-
-## 🏁 Resultado Final
 
 O sistema demonstrou-se eficaz na *automação das rotinas comerciais*, otimizando o controle de produtos, vendas e entregas, além de oferecer suporte à tomada de decisões estratégicas.
