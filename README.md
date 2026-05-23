@@ -85,9 +85,8 @@ O banco de dados foi modelado utilizando o paradigma relacional, garantindo inte
 
 ## Diagrama Entidade Relacionamento (DER)
 
-<p align="center">
-  <img src="./assets/der.jpeg" width="900">
-</p>
+<img src="./imagens/Der.jpg" width="900">
+
 
 O DER foi elaborado para representar as principais entidades do sistema, incluindo:
 
@@ -105,9 +104,8 @@ Além disso, os relacionamentos permitem o controle do estoque e o cálculo de l
 
 ## Estrutura SQL - Tabela Produto
 
-<p align="center">
-  <img src="./assets/criacao-tabela-produto.jpeg" width="900">
-</p>
+<img src="./imagens/Criação tabela produto.jpg" width="900">
+
 
 A tabela **PRODUTO** foi implementada no **Oracle Database** utilizando restrições de integridade, garantindo:
 
@@ -120,9 +118,8 @@ A tabela **PRODUTO** foi implementada no **Oracle Database** utilizando restriç
 
 ## 📌 Diagrama de Casos de Uso
 
-<p align="center">
-  <img src="./assets/casos-de-uso.jpeg" width="900">
-</p>
+<img src="./imagens/Casos de usos.jpg" width="900">
+
 
 O diagrama demonstra as permissões de acesso dos diferentes perfis do sistema:
 
