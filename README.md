@@ -104,7 +104,8 @@ Além disso, os relacionamentos permitem o controle do estoque e o cálculo de l
 
 ## Estrutura SQL - Tabela Produto
 
-<img src="./imagens/Criação tabela produto.jpg" width="900">
+<img src="./imagens/criacao-tabela-produto.jpg" width="900">
+
 
 
 A tabela **PRODUTO** foi implementada no **Oracle Database** utilizando restrições de integridade, garantindo:
@@ -118,7 +119,8 @@ A tabela **PRODUTO** foi implementada no **Oracle Database** utilizando restriç
 
 ## 📌 Diagrama de Casos de Uso
 
-<img src="./imagens/Casos de usos.jpg" width="900">
+<img src="./imagens/casos-de-uso.jpg" width="900">
+
 
 
 O diagrama demonstra as permissões de acesso dos diferentes perfis do sistema:
