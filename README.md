@@ -139,7 +139,8 @@ Este projeto também possui um artigo acadêmico contendo toda a fundamentação
 
 📥 **Baixe o artigo aqui:**  
 
-[📄 Artigo Grace Store](./docs/Artigo-Grace-Store.pdf)
+[📄 Artigo Grace Store](./docs/Artigo_Grace_Store_CONTEEX_2026_3_b.docx)
+
 
 ---
 
